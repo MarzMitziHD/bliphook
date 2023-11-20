@@ -5,8 +5,8 @@ import json
 import time
 prev_entry = None
 prev_postfeed = None
-usr = 'koy'
-hook_url = 'https://discord.com/api/webhooks/1176041010518827060/-Q_RMHKbEtx4-iOzfaAC-tpPMafFKxpSpPnJ_xiQja5l0YXyY2i3nXeePipbrBEz4h2a'
+usr = None
+hook_url = None
 
 while True:
     posts_feed = feedparser.parse(f'https://blips.club/{usr}/feed.rss')
