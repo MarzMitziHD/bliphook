@@ -5,12 +5,17 @@ import json
 import time
 import argparse
 import random
+
+def seshgen():
+    return random.randint(1000000,9999999)
+
 previouser_entry = None
 prev_entry = None
 prev_postfeed = None
 i = 0
+j = 0
 delay = 60*2
-sesh = random.randint(1000000,9999999)
+sesh = seshgen()
 
 parser = argparse.ArgumentParser()
 parser.add_argument("-u", "--username", help="Blips username to listen to. Must be string.", required=True
@@ -27,6 +32,10 @@ if delay is None:
     delay = 60 * 2
 
 while True:
+    print('-----------------------------')
+    if j >= 10:
+        print('Regenerating sesh...')
+        sesh = seshgen()
     print(f'Getting {usr}\'s RSS feed...')
     posts_feed = feedparser.parse(f'https://blips.club/{usr}/feed.rss')
     entry = posts_feed.entries[0]
@@ -69,3 +78,4 @@ while True:
     prev_entry = entry
     prev_postfeed = posts_feed
     time.sleep(delay)
+    j += 1
