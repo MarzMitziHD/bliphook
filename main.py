@@ -11,17 +11,18 @@ i = 0
 delay = 60*2
 
 parser = argparse.ArgumentParser()
-parser.add_argument("-u", "--username", help="Blips username to listen to. Must be string."#, required=True
+parser.add_argument("-u", "--username", help="Blips username to listen to. Must be string.", required=True
 )
-parser.add_argument("-w", "--webhook_url", help="Webhook URL to post the recent bleep to. Supports only Discord, must be string."#, required=True
+parser.add_argument("-w", "--webhook_url", help="Webhook URL to post the recent bleep to. Supports only Discord, must be string.", required=True
 )
-parser.add_argument("-c", "--cooldown", help="Seconds to cool down after it has checked for new posts. Must be integer."#, required=True
-)
+parser.add_argument("-c", "--cooldown", help="Seconds to cool down after it has checked for new posts. Must be integer.")
 args = parser.parse_args()
 args_dict = vars(args)
 usr = args_dict['username']
 hook_url = args_dict['webhook_url']
 delay = args_dict['cooldown']
+if delay is None:
+    delay = 60 * 2
 
 while True:
     print(f'Getting {usr}\'s RSS feed...')
