@@ -49,7 +49,8 @@ while True:
                     'color': 4716015,
                     'description': f'{entry.description}',
                     'url': f'{entry.link}',
-                    'thumbnail': thumbnail
+                    'thumbnail': thumbnail,
+                    'footer': {'text': f'Published at {entry.published}'}
                 }]
                 data = {
                     'avatar_url': f'https://blips.club/profiles/{usr}.png',
