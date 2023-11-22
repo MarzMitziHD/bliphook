@@ -64,7 +64,7 @@ while True:
                     'footer': {'text': f'Published at {entry.published}'}
                 }]
                 data = {
-                    'avatar_url': f'https://blips.club/profiles/{usr}.png',
+                    'avatar_url': f'https://blips.club/profiles/{usr}.png?{sesh}',
                     "username": f'blips.club/{usr}',
                     "embeds": embed
                 }
