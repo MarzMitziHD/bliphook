@@ -4,11 +4,13 @@ import re
 import json
 import time
 import argparse
+import random
 previouser_entry = None
 prev_entry = None
 prev_postfeed = None
 i = 0
 delay = 60*2
+sesh = random.randint(1000000,9999999)
 
 parser = argparse.ArgumentParser()
 parser.add_argument("-u", "--username", help="Blips username to listen to. Must be string.", required=True
@@ -42,7 +44,7 @@ while True:
                   'post.')
             while posts_feed.entries[i] != prev_entry:
                 entry = posts_feed.entries[i]
-                thumbnail = {'url': f'https://blips.club/profiles/{usr}.png'}
+                thumbnail = {'url': f'https://blips.club/profiles/{usr}.png?{sesh}'}
                 embed = [{
                     'title': f'Blip from {usr}',
                     # 'title': 'test',
