@@ -1,5 +1,5 @@
 # bliphook
-A python script that posts your new bleeps onto Discord via a webhook
+A python script that posts your new bleeps onto Discord via a webhook (Warning this kinda sucks lol)
 # How to set up
 1. Get Python 3.x
 2. Run the script. Make sure to pass -u and -w arguments. (to run the script you can do `python3 main.py -u [USERNAME] -w [WEBHOOK_URL]`)
